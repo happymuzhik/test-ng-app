@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, NgForm }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import PageTaskListComponent from '../pages/page-task-list/page-task-list';
@@ -33,7 +33,7 @@ const appRoutes: Routes = [
 		BrowserModule,
 		FormsModule,
 	],
-	providers: [],
+	providers: [NgForm],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,6 +11,10 @@ export default class TaskFormComponent {
 	private task: any = null;
 
 	constructor(f: NgForm){
+		
+	}
+
+	onSubmit(f){
 		console.log(f);
 	}
 };
