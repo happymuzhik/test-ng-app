@@ -1,6 +1,11 @@
 <div class="wrapper">
-    <div class="content">
-        <page-task-list></page-task-list>
-    </div>
+	<div class="content">
+		<h1>My test APP</h1>
+		<nav>
+			<a routerLink="/tasks" routerLinkActive="active">Task list</a>
+			<a routerLink="/task" routerLinkActive="active">One task</a>
+		</nav>
+		<router-outlet></router-outlet>
+	</div>
 </div>
 
