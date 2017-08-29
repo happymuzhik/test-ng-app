@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
+import Task from '../../models/task';
 
 @Component({
 	selector: 'task-form',
@@ -8,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export default class TaskFormComponent {
 
-	private task: any = null;
+	@Input()task: Task = new Task();
 
 	constructor(f: NgForm){
 		
@@ -17,4 +19,5 @@ export default class TaskFormComponent {
 	onSubmit(f){
 		console.log(f);
 	}
+
 };
