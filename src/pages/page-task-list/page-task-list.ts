@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TaskService } from '../../services/task.service';
+import Task from '../../models/task';
 
 @Component({
 	selector: 'page-task-list',
@@ -6,7 +8,10 @@ import { Component } from '@angular/core';
 	styleUrls: ['./page-task-list.scss']
 })
 export default class PageTaskListComponent {
-	constructor(){
 
+	private taskList: Task[];
+
+	constructor(private taskService: TaskService){
+		this.taskList = taskService.getTasks();
 	}
 };

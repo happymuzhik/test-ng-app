@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
+import { TaskService } from '../../services/task.service';
 
 @Component({
 	selector: 'page-edit-task',
@@ -9,6 +12,9 @@ export default class PageEditTaskComponent {
 
 	private task: any = null;
 
-	constructor(){
+	constructor(private route: ActivatedRoute,
+  				private router: Router,
+  				private taskService: TaskService){
+		console.log('route.paramMap - ', route.paramMap)
 	}
 };

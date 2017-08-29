@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import Task from '../../models/task';
 
 @Component({
 	selector: 'task-list',
@@ -7,16 +10,13 @@ import { Component } from '@angular/core';
 })
 export default class TaskListComponent {
 
-	public taskList: any = [
-		{
-			text: 'task1'
-		},
-		{
-			text: 'task2'
-		}
-	]
+	@Input('task-list')taskList: Task[];
 
-	constructor(){
-		
+	constructor(private router: Router){
+		console.log('task-list taskList', this.taskList);
+	}
+
+	onSelect(task){
+		this.router.navigate(['/task', task.id]);
 	}
 };
