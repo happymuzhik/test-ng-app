@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { TaskService } from '../../services/task.service';
+import Task from '../../models/task';
 
 @Component({
 	selector: 'page-edit-task',
@@ -10,11 +11,17 @@ import { TaskService } from '../../services/task.service';
 })
 export default class PageEditTaskComponent {
 
-	private task: any = null;
+	private taskId: number;
+	private task: Task = new Task();
 
 	constructor(private route: ActivatedRoute,
-  				private router: Router,
-  				private taskService: TaskService){
-		console.log('route.paramMap - ', route.paramMap)
+				private router: Router,
+				private taskService: TaskService){
+		const _this = this;		
+		this.route.params.subscribe( param => _this.taskId = param.id);
+	}
+
+	ngOnInit(){
+		this.task = this.taskService.getTaskById(this.taskId);
 	}
 };

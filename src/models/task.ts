@@ -1,4 +1,4 @@
 export default class Task {
-  id: number;
-  text: string;
+  id: number = 0;
+  text: string = '';
 };

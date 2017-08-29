@@ -1,6 +1,6 @@
 <div>
 	<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-		<input name="task" [(ngModel)]="task" required>
+		<input name="text" [(ngModel)]="task.text" required>
 		<button>Submit</button>
 	</form>
 </div>

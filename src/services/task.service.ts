@@ -14,7 +14,17 @@ const initialTaskList = [
 
 @Injectable()
 export class TaskService {
+
+	private tasks: Task[];
+
+	constructor(){
+		this.tasks = initialTaskList;
+	}
+
 	getTasks(): Task[] {
-		return initialTaskList;
+		return this.tasks;
+	}
+	getTaskById(id): Task {
+		return this.tasks.find( task => task.id == id );
 	}
 };

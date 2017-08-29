@@ -13,7 +13,6 @@ export default class TaskListComponent {
 	@Input('task-list')taskList: Task[];
 
 	constructor(private router: Router){
-		console.log('task-list taskList', this.taskList);
 	}
 
 	onSelect(task){
